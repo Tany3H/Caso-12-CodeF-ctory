@@ -1,1 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Finanzas Personales</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
 
+  <main>
+
+    <!-- LOGIN -->
+    <section id="login">
+      <h2>Iniciar Sesión</h2>
+      <form>
+        <label>Correo</label>
+        <input type="email" id="loginCorreo" required>
+
+        <label>Contraseña</label>
+        <input type="password" id="loginPassword" required>
+
+        <button type="button" onclick="login()">Entrar</button>
+      </form>
+
+      <p id="loginMsg"></p>
+      <p>¿No tienes cuenta? <button onclick="mostrarRegistro()">Registrarse</button></p>
+    </section>
+
+    <!-- REGISTRO -->
+    <section id="registro" class="hidden">
+      <h2>Registro</h2>
+      <form>
+        <label>Nombre</label>
+        <input type="text" id="nombre" required>
+
+        <label>Correo</label>
+        <input type="email" id="correo" required>
+
+        <label>Contraseña</label>
+        <input type="password" id="password" required>
+
+        <button type="button" onclick="registrar()">Registrarse</button>
+      </form>
+
+      <p id="registroMsg"></p>
+      <button onclick="mostrarLogin()">Volver</button>
+    </section>
+
+    <!-- DASHBOARD -->
+    <section id="dashboard" class="hidden">
+      <h2>Balance Total: $<span id="balance">0</span></h2>
+
+      <nav>
+        <button onclick="mostrarIngreso()">Agregar Ingreso</button>
+        <button onclick="mostrarGasto()">Agregar Gasto</button>
+      </nav>
+
+      <h3>Movimientos</h3>
+      <ul id="lista"></ul>
+    </section>
+
+    <!-- INGRESO -->
+    <section id="ingreso" class="hidden">
+      <h2>Registrar Ingreso</h2>
+      <form>
+        <label>Monto</label>
+        <input type="number" id="montoIngreso" required>
+
+        <label>Descripción</label>
+        <input type="text" id="descIngreso">
+
+        <button type="button" onclick="guardarIngreso()">Guardar</button>
+      </form>
+      <p id="msgIngreso"></p>
+    </section>
+
+    <!-- GASTO -->
+    <section id="gasto" class="hidden">
+      <h2>Registrar Gasto</h2>
+      <form>
+        <label>Monto</label>
+        <input type="number" id="montoGasto" required>
+
+        <label>Descripción</label>
+        <input type="text" id="descGasto">
+
+        <button type="button" onclick="guardarGasto()">Guardar</button>
+      </form>
+      <p id="msgGasto"></p>
+    </section>
+
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
